@@ -3,7 +3,7 @@ import {
     persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER
 } from 'redux-persist'; /* різних констант ті ф-ій з бібліотеки redux-persist, яка допомогає зберігати стан між сеансами браузера */
 import storage from 'redux-persist/lib/storage'; /* для збереження  стану в локальному сховищі браузера */
-// import { tasksReducer } from './tasks/';
+import { tasksReducer } from "./tasks/slice";
 import { authReducer } from "./auth/slice";
 
 const authPersistConfig = { /* для збереження стану автентифікації (auth) */
@@ -15,7 +15,7 @@ const authPersistConfig = { /* для збереження стану автен
 export const store = configureStore({ /* створення Redux-стор */
     reducer: {
         auth: persistReducer(authPersistConfig, authReducer),
-        // tasks: tasksReducer,
+        tasks: tasksReducer,
     },
     middleware: getDefaultMiddleware => /* для обробки серіалізованих дій (action) */
         getDefaultMiddleware({ /* тобто для здатності зберігати та відновлючати стан додатку */
