@@ -6,7 +6,7 @@ import css from './LoginForm.module.css';
 const LoginForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
