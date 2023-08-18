@@ -20,9 +20,9 @@ const TaskEditor = () => {
   };
 
   return (
-    <form className={css.form}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <input name="text" className={css.input} />
-      <button type="submit" className={css.btn}>
+      <button type="submit" className={css.button}>
         Add task
       </button>
     </form>

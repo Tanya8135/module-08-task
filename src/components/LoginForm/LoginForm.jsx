@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import css from './LoginForm.module.css';
 
-export const LoginForm = () => {
+const LoginForm = () => {
   const dispatch = useDispatch(); /* викоистовується для відправки дій */
   /* Функція handleSubmit відповідає за відправку дії logIn до Redux store з введеними даними користувача при вході. */
   // handleSubmit - виконує обробку події подачі форми (submit event) при вході користувача.
@@ -38,3 +38,5 @@ export const LoginForm = () => {
     </form>
   );
 };
+
+export default LoginForm;
